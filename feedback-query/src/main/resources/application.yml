@@ -1,0 +1,31 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: feedback-query-service
+
+  data:
+    mongodb:
+      uri: mongodb+srv://tnbin98:Z8qFh4dw53Mu4yTW@adaptors.wmxmod4.mongodb.net
+      database: test
+
+kafka:
+  cluster:
+    uri: localhost:29092
+
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  consumer:
+    group-id: feedback-consumer-group
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html

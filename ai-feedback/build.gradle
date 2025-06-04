@@ -1,0 +1,55 @@
+plugins {
+    id 'org.springframework.boot' // version 빼기
+    id 'io.spring.dependency-management' // version 빼기
+    id 'java'
+}
+
+group = 'com.multitap'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+
+    // ChatGPT
+    implementation 'io.github.flashvayne:chatgpt-spring-boot-starter:1.0.4'
+
+    // HTTP 요청을 위한 Apache HttpClient
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2'
+
+    // JSON 파싱 (Jackson)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // 클로바 OCR 사용을 위한 Base64 인코딩/디코딩
+    implementation 'commons-codec:commons-codec:1.15'
+
+    // PDF 처리
+    implementation 'org.apache.pdfbox:pdfbox:2.0.31'
+
+    // kafka
+    implementation 'org.springframework.kafka:spring-kafka'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

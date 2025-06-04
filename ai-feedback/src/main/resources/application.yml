@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui/index.html
+
+gpt:
+  api:
+    url: https://api.openai.com/v1/chat/completions
+    key: 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
+  model: gpt-3.5-turbo
+
+ocr:
+  api:
+    url: https://pt2fqvyojd.apigw.ntruss.com/custom/v1/36062/11ad447ce2a6efe40901e230f8017001cc9435d08aaa3eae3d64bd51eb5bf502/general
+    key: RUpKSFVEUUR6cU9YbmFwSnptcHpIcXpaTndFZEJic04=
+
+prompt:
+  api:
+    url: http://localhost:8080/api/v1/prompt/send
+
+kafka:
+  cluster:
+    uri: localhost:29092
+  consumer:
+    group-id: feedback-consumer-group
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
