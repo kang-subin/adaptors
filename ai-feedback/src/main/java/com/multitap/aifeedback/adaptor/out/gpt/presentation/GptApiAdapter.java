@@ -1,7 +1,9 @@
 package com.multitap.aifeedback.adaptor.out.gpt.presentation;
 
-import com.multitap.aifeedback.application.port.in.dto.in.CombinedPromptRequestDto;
+import com.multitap.aifeedback.adaptor.out.gpt.vo.FeedbackResponseVo;
+import com.multitap.aifeedback.application.port.in.dto.in.AiRequestDto;
 import com.multitap.aifeedback.application.port.in.dto.in.GptRequestDto;
+import com.multitap.aifeedback.application.port.in.dto.out.FeedbackResponseDto;
 import com.multitap.aifeedback.application.port.in.dto.out.GptResponseDto;
 import com.multitap.aifeedback.application.port.out.GptApiPort;
 import lombok.extern.slf4j.Slf4j;
@@ -29,21 +31,20 @@ public class GptApiAdapter implements GptApiPort {
 
 
     @Override
-    public Object callGptApi(CombinedPromptRequestDto combinedPromptRequestDto) {
+    public FeedbackResponseVo callGptApi(AiRequestDto aiRequestDto) {
 
-        String gptResponseContent = gptRestTemplate.postForObject(
+        FeedbackResponseDto feedbackResponseDto = FeedbackResponseDto.of(gptRestTemplate.postForObject(
                 apiUrl,
                 GptRequestDto.from(
                         model,
-                        combinedPromptRequestDto.getRequest() +
-                                combinedPromptRequestDto.getPromptDetails().getRequest() +
-                                combinedPromptRequestDto.getPromptDetails().getReplyFormat()
+                        aiRequestDto.getPrompt() +
+                                aiRequestDto.getOcrResponse()
                 ),
                 GptResponseDto.class
-        ).getChoices().get(0).getMessage().getContent();
+        ).getChoices().get(0).getMessage().getContent());
 
-        log.info("GPT 응답: {}", gptResponseContent);
+        log.info("GPT 응답: {}", feedbackResponseDto.getContent());
 
-        return CombinedPromptRequestDto.processResponse(combinedPromptRequestDto.getRequest(), gptResponseContent);
+        return feedbackResponseDto.toVo();
     }
 }

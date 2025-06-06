@@ -1,13 +1,7 @@
 package com.multitap.feedback.domain.prompt;
 
 import com.multitap.feedback.common.response.BaseEntity;
-import com.multitap.feedback.domain.prompt.enums.Category;
-import com.multitap.feedback.domain.prompt.enums.DocumentType;
-import com.multitap.feedback.domain.prompt.enums.IndustryType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,16 +16,17 @@ public class Prompt extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private IndustryType industry;
+    private String industry;
 
-    private DocumentType documentType;
+    private String documentType;
 
-    private Category category;
+    private String category;
 
+    @Lob
     private String content; // prompt 내용
 
     @Builder
-    public Prompt(Long id, IndustryType industry, DocumentType documentType, Category category, String content) {
+    public Prompt(Long id, String industry, String documentType, String category, String content) {
         this.id = id;
         this.industry = industry;
         this.documentType = documentType;

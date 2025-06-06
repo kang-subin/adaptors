@@ -26,6 +26,12 @@ public class PromptServiceImpl implements PromptService {
     }
 
     @Override
+    public String getPrompt(String industry, String documentType) {
+        return promptRepository.findContentByIndustryAndDocumentType(industry, documentType)
+                .orElseThrow(() -> new BaseException(BaseResponseStatus.NO_EXIST_PROMPT));
+    }
+
+    @Override
     public List<PromptResponseDto> getPromptList() {
         return promptRepository.findAll().stream()
                 .map(PromptResponseDto::from)
@@ -34,7 +40,9 @@ public class PromptServiceImpl implements PromptService {
 
     @Override
     public void changePrompt(PromptRequestDto promptRequestDto, Long id) {
-       Prompt prompt =  promptRepository.findById(id).orElseThrow(() -> new BaseException(BaseResponseStatus.NO_EXIST_PROMPT));
-       promptRepository.save(PromptRequestDto.updateToEntity(promptRequestDto,prompt));
+        Prompt prompt = promptRepository.findById(id).orElseThrow(() -> new BaseException(BaseResponseStatus.NO_EXIST_PROMPT));
+        promptRepository.save(PromptRequestDto.updateToEntity(promptRequestDto, prompt));
     }
+
+
 }

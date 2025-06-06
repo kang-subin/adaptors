@@ -5,7 +5,7 @@ import com.multitap.aifeedback.adaptor.in.kafka.messagein.FeedbackScorePromptDto
 import com.multitap.aifeedback.adaptor.out.gpt.vo.FeedbackContentResponseVo;
 import com.multitap.aifeedback.application.port.in.GptUseCase;
 import com.multitap.aifeedback.application.port.in.KafkaUseCase;
-import com.multitap.aifeedback.application.port.in.dto.in.CombinedPromptRequestDto;
+import com.multitap.aifeedback.application.port.in.dto.in.AiRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -24,7 +24,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = "create-category-prompt-topic", groupId = "feedback-consumer-group", containerFactory = "feedbackScorePromptDtoListener")
     public void processFeedbackScorePrompt(FeedbackScorePromptDto feedbackScorePromptDto) {
         // gpt 피드백 요청
-        Object gptResponseVo = gptUseCase.sendFeedbackRequestToGpt(CombinedPromptRequestDto.of(feedbackScorePromptDto.getFeedbackScoreDto(),feedbackScorePromptDto.getPromptDetails()));
+        Object gptResponseVo = gptUseCase.sendFeedbackRequestToGpt(AiRequestDto.of(feedbackScorePromptDto.getFeedbackScoreDto(),feedbackScorePromptDto.getPromptDetails()));
 
         log.info("uuid :{}", feedbackScorePromptDto.getFeedbackScoreDto().getUuid());
         //kafka topic 발행

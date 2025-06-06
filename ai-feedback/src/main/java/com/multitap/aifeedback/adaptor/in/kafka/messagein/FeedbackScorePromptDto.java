@@ -1,6 +1,5 @@
 package com.multitap.aifeedback.adaptor.in.kafka.messagein;
 
-import com.multitap.aifeedback.adaptor.out.prompt.vo.PromptDetailsResponseVo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

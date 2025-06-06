@@ -1,6 +1,6 @@
 package com.multitap.feedback.infrastructure.kafka;
 
-import com.multitap.feedback.domain.feedback.Score;
+import com.multitap.feedback.domain.score.Score;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

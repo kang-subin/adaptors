@@ -1,9 +1,6 @@
 package com.multitap.feedback.dto.prompt;
 
 import com.multitap.feedback.domain.prompt.Prompt;
-import com.multitap.feedback.domain.prompt.enums.Category;
-import com.multitap.feedback.domain.prompt.enums.DocumentType;
-import com.multitap.feedback.domain.prompt.enums.IndustryType;
 import com.multitap.feedback.vo.prompt.PromptRequestVo;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PromptRequestDto {
 
-    private IndustryType industry;
-    private DocumentType documentType;
-    private Category category;
+    private String industry;
+    private String documentType;
+    private String category;
     private String content;
 
     @Builder
-    public PromptRequestDto(IndustryType industry, DocumentType documentType,Category category, String content) {
+    public PromptRequestDto(String industry, String documentType, String category, String content) {
         this.industry = industry;
         this.documentType = documentType;
         this.category = category;

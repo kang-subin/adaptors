@@ -1,5 +1,6 @@
-package com.multitap.feedback.vo.prompt;
+package com.multitap.feedback.vo;
 
+import com.multitap.feedback.vo.prompt.PromptResponseVo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,12 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class PromptResponseVo {
+public class FeedbackResponseVo {
 
-    private Long id;
-    private String industry;
-    private String documentType;
-    private String category;
     private String content;
 
 }
