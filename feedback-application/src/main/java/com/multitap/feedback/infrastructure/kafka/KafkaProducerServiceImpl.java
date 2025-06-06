@@ -1,4 +1,4 @@
-package com.multitap.feedback.kafka.producer;
+package com.multitap.feedback.infrastructure.kafka;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

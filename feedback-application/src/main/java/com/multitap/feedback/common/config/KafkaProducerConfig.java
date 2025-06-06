@@ -1,4 +1,4 @@
-package com.multitap.feedback.kafka.config;
+package com.multitap.feedback.common.config;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;  // 올바른 StringSerializer

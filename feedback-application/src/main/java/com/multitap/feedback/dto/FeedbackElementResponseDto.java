@@ -1,6 +1,6 @@
 package com.multitap.feedback.dto;
 
-import com.multitap.feedback.entity.FeedbackElement;
+import com.multitap.feedback.domain.FeedbackElement;
 import com.multitap.feedback.vo.FeedbackElementResponseVo;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class FeedbackElementResponseDto {
+public class   FeedbackElementResponseDto {
 
     private String elementName;
     private String elementContent;

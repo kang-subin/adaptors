@@ -5,7 +5,7 @@ import com.multitap.feedback.dto.FeedbackScoreRequestDto;
 
 import java.util.List;
 
-public interface ScoreService {
+public interface FeedbackApplicationService {
     void addScore(FeedbackScoreRequestDto feedbackScoreRequestDto);
     List<FeedbackElementResponseDto> getFeedbackElement(String categoryCode);
 }

@@ -1,4 +1,4 @@
-package com.multitap.feedback.entity;
+package com.multitap.feedback.domain;
 
 import com.multitap.feedback.common.response.BaseEntity;
 import jakarta.persistence.Entity;
