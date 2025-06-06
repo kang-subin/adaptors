@@ -32,7 +32,6 @@ public class OcrService implements OcrUseCase {
     @Override
     public OcrProcessedFeedbackRequest uploadPdfForOcr(OcrRequestDto ocrRequestDto) throws IOException {
 
-        // 이미지 분석
         List<OcrResponseDto> ocrResponses = ocrApiPort.callOcrApi(convertPdfToImages(ocrRequestDto));
 
         // OCR 결과 데이터 파싱

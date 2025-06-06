@@ -1,6 +1,6 @@
-package com.multitap.feedback.dto.feedback;
+package com.multitap.aifeedback.application.port.in.dto.out;
 
-import com.multitap.feedback.vo.FeedbackResponseVo;
+import com.multitap.aifeedback.adaptor.out.gpt.vo.FeedbackResponseVo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FeedbackResponseDto {
 
-    String content;
+    private String content;
 
     @Builder
     public FeedbackResponseDto(String content) {
         this.content = content;
     }
 
-    public FeedbackResponseDto from(AiResponseDto aiResponseDto) {
+    public static FeedbackResponseDto of(String content) {
         return FeedbackResponseDto.builder()
-                .content(aiResponseDto.getContent())
+                .content(content)
                 .build();
     }
 
@@ -27,5 +27,4 @@ public class FeedbackResponseDto {
                 .content(content)
                 .build();
     }
-
 }

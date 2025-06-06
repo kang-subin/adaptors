@@ -27,6 +27,12 @@ ext {
     set('springCloudVersion', "2023.0.3")
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -36,9 +42,11 @@ dependencies {
 
     runtimeOnly 'com.mysql:mysql-connector-j'
 
-    implementation 'org.springframework.kafka:spring-kafka' // Kafka
+    // Kafka
+    implementation 'org.springframework.kafka:spring-kafka'
 
-//    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    // OpenFeign
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
     // Swagger OpenAPI
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'

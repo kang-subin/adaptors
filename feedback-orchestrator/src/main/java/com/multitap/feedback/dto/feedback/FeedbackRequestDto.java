@@ -1,5 +1,6 @@
 package com.multitap.feedback.dto.feedback;
 
+import com.multitap.feedback.vo.FeedbackRequestVo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,13 @@ public class FeedbackRequestDto {
         this.industry = industry;
         this.documentType = documentType;
         this.file = file;
+    }
+
+    public static FeedbackRequestDto from(FeedbackRequestVo feedbackRequestVo) {
+        return FeedbackRequestDto.builder()
+                .industry(feedbackRequestVo.getIndustry())
+                .documentType(feedbackRequestVo.getDocumentType())
+                .file(feedbackRequestVo.getFile())
+                .build();
     }
 }
