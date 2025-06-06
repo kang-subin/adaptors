@@ -1,4 +1,4 @@
-package com.multitap.feedback.vo.feedback;
+package com.multitap.feedback.vo.score;
 
 import lombok.Builder;
 import lombok.Getter;

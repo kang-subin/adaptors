@@ -1,7 +1,7 @@
-package com.multitap.feedback.application.feedback;
+package com.multitap.feedback.application.score;
 
-import com.multitap.feedback.dto.feedback.ElementResponseDto;
-import com.multitap.feedback.dto.feedback.ScoreRequestDto;
+import com.multitap.feedback.dto.score.ElementResponseDto;
+import com.multitap.feedback.dto.score.ScoreRequestDto;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package com.multitap.feedback.application.feedback;
+package com.multitap.feedback.application.score;
 
-import com.multitap.feedback.dto.feedback.ElementResponseDto;
-import com.multitap.feedback.dto.feedback.ScoreRequestDto;
-import com.multitap.feedback.infrastructure.repository.feedback.ElementRepository;
-import com.multitap.feedback.infrastructure.repository.feedback.ScoreRepository;
+import com.multitap.feedback.dto.score.ElementResponseDto;
+import com.multitap.feedback.dto.score.ScoreRequestDto;
+import com.multitap.feedback.infrastructure.repository.score.ElementRepository;
+import com.multitap.feedback.infrastructure.repository.score.ScoreRepository;
 import com.multitap.feedback.infrastructure.kafka.FeedbackScoreDto;
 import com.multitap.feedback.infrastructure.kafka.KafkaProducerService;
 import lombok.RequiredArgsConstructor;

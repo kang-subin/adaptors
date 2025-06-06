@@ -1,6 +1,6 @@
-package com.multitap.feedback.infrastructure.repository.feedback;
+package com.multitap.feedback.infrastructure.repository.score;
 
-import com.multitap.feedback.domain.feedback.Element;
+import com.multitap.feedback.domain.score.Element;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.multitap.feedback.dto.feedback;
+package com.multitap.feedback.dto.score;
 
-import com.multitap.feedback.domain.feedback.Element;
-import com.multitap.feedback.vo.feedback.ElementResponseVo;
+import com.multitap.feedback.domain.score.Element;
+import com.multitap.feedback.vo.score.ElementResponseVo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

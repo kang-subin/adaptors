@@ -1,11 +1,11 @@
-package com.multitap.feedback.presentation.feedback;
+package com.multitap.feedback.presentation.score;
 
-import com.multitap.feedback.application.feedback.ScoreService;
+import com.multitap.feedback.application.score.ScoreService;
 import com.multitap.feedback.common.response.BaseResponse;
-import com.multitap.feedback.dto.feedback.ElementResponseDto;
-import com.multitap.feedback.dto.feedback.ScoreRequestDto;
-import com.multitap.feedback.vo.feedback.ElementResponseVo;
-import com.multitap.feedback.vo.feedback.ScoreRequestVo;
+import com.multitap.feedback.dto.score.ElementResponseDto;
+import com.multitap.feedback.dto.score.ScoreRequestDto;
+import com.multitap.feedback.vo.score.ElementResponseVo;
+import com.multitap.feedback.vo.score.ScoreRequestVo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

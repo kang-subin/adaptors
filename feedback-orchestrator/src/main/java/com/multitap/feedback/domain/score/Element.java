@@ -1,4 +1,4 @@
-package com.multitap.feedback.domain.feedback;
+package com.multitap.feedback.domain.score;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

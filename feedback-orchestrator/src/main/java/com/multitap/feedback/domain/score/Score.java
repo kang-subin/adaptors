@@ -1,4 +1,4 @@
-package com.multitap.feedback.domain.feedback;
+package com.multitap.feedback.domain.score;
 
 import com.multitap.feedback.common.response.BaseEntity;
 import jakarta.persistence.Entity;

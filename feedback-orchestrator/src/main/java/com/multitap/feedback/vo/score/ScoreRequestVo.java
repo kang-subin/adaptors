@@ -1,4 +1,4 @@
-package com.multitap.feedback.vo.feedback;
+package com.multitap.feedback.vo.score;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
