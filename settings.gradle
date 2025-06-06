@@ -1,6 +1,6 @@
 rootProject.name = 'adaptors'
 
 include 'ai-feedback'
-include 'feedback-application'
+include 'feedback-orchestrator'
 include 'feedback-query'
 
